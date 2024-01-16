@@ -1,4 +1,4 @@
-TAX AA 2
-mic_count bypass pc_count bypass
-mic_reset_oe_a_we_x bypass pc_oe isr_block
-
+TAX AA 3
+OE_A BYPASS PC_COUNT LB_DLATCH_WE
+WE_X BYPASS PC_OE LB_DLATCH_OE
+MICR BYPASS PC_OE ISR_WE

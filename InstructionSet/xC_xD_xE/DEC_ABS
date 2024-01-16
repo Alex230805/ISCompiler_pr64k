@@ -1,8 +1,7 @@
 DEC_ABS CE 6
-mic_count bypass pc_count bypass
-mic_count bypass pc_count read_mode_and_dlatch_active
-mic_count bypass pc_oe read_mode_and_dlatch_h_active
-mic_count bypass pc_oe all_latch_out_ab
-mic_count load_a_alu_dec_actived all_latch_out_ab read_mode
-mic_reset alu_out bypass write_mode
-
+BYPASS BYPASS PC_COUNT BYPASS
+BYPASS BYPASS PC_COUNT CPU_DATA_IN_LB_DLATCH_WE
+BYPASS BYPASS PC_OE CPU_DATA_IN_HB_DLATCH_WE
+BYPASS A_WE_DEC BYPASS CPU_DATA_IN_DLATHC_OE_ADR
+BYPASS BUS_OE BYPASS CPU_DATA_OUT_DLATCH_OE_ADR
+MICR BYPASS PC_COUNT ISR_WE

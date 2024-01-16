@@ -1,4 +1,3 @@
 CLV B8 2
-mic_count bypass pc_count bypass
-mic_reset bypass pc_oe clear_overflow
-
+BYPASS BYPASS PC_COUNT OVERFLOW_CLEAR
+MICR BYPASS PC_OE ISR_WE

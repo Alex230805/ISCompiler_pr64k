@@ -1,5 +1,4 @@
 PHA 48 3
-mic_count bypass pc_count bypass
-mic_count_and_oe_a bypass sp_dec write_mode
-mic_reset bypass pc_oe isr_block
-
+BYPASS BYPASS PC_COUNT BYPASS
+OE_A BYPASS SP_DEC CPU_DATA_OUT
+MICR BYPASS PC_OE ISR_WE

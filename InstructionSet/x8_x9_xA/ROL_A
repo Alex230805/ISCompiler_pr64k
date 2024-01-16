@@ -1,5 +1,3 @@
-ROL_A 2A 3
-mic_count bypass pc_oe bypass
-mic_count load_a_alu_rol_actived pc_oe read_mode
-mic_reset_and_we_a alu_out pc_count isr_block
-
+ROL_A 2A 2
+OE_A A_WE_ROL PC_COUNT BYPASS
+MICR_WE_A BUS_OE PC_OE ISR_WE

@@ -1,4 +1,4 @@
-TYA 98 2
-mic_count bypass pc_count bypass
-mic_reset_oe_y_we_a bypass pc_oe isr_block
-
+TYA 98 3
+OE_Y BYPASS PC_COUNT LB_DLATCH_WE
+WE_A BYPASS PC_OE LB_DLATCH_OE
+MICR BYPASS PC_OE ISR_WE
