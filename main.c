@@ -17,18 +17,18 @@ int write(uint8_t buffer[], uint16_t opcode, int step, FILE * pointer);
 uint16_t hexDigitConverter(char s);
 
 //path to mnemonic microcode reference
-char path_microcode_1[] = "./RomDatabase/rom1/micro.micunit";
-char path_microcode_2[] = "./RomDatabase/rom2/micro.micunit";
-char path_microcode_3[] = "./RomDatabase/rom3/micro.micunit";
-char path_microcode_4[] = "./RomDatabase/rom4/micro.micunit";
-char path_microcode_5[] = "./RomDatabase/flag_rom/micro.f";
+char path_microcode_1[] = "./RomDatabase_new/rom1/micro.micunit";
+char path_microcode_2[] = "./RomDatabase_new/rom2/micro.micunit";
+char path_microcode_3[] = "./RomDatabase_new/rom3/micro.micunit";
+char path_microcode_4[] = "./RomDatabase_new/rom4/micro.micunit";
+char path_microcode_5[] = "./RomDatabase_new/flag_rom/micro.f";
 
 //path to hexadecimal microcode reference
-char path_hex_1[] = "./RomDatabase/rom1/rom_hex.micunit";
-char path_hex_2[] = "./RomDatabase/rom2/rom_hex.micunit";
-char path_hex_3[] = "./RomDatabase/rom3/rom_hex.micunit";
-char path_hex_4[] = "./RomDatabase/rom4/rom_hex.micunit";
-char path_hex_5[] = "./RomDatabase/flag_rom/rom_hex.f";
+char path_hex_1[] = "./RomDatabase_new/rom1/rom_hex.micunit";
+char path_hex_2[] = "./RomDatabase_new/rom2/rom_hex.micunit";
+char path_hex_3[] = "./RomDatabase_new/rom3/rom_hex.micunit";
+char path_hex_4[] = "./RomDatabase_new/rom4/rom_hex.micunit";
+char path_hex_5[] = "./RomDatabase_new/flag_rom/rom_hex.f";
 //path to binary file
 char path_bin_1[] = "./out/rom1.bin";
 char path_bin_2[] = "./out/rom2.bin";
@@ -37,7 +37,7 @@ char path_bin_4[] = "./out/rom4.bin";
 char path_bin_5[] = "./out/flag_rom.bin";
 
 
-char path_instruction_set[][128] = {
+char path_instruction_set_old[][128] = {
     {"./InstructionSet/x0_x1_x2/BRK"},
     {"./InstructionSet/x0_x1_x2/ORA_IND_X"},
     {"./InstructionSet/x0_x1_x2/ORA_Y_IND"},
@@ -217,8 +217,187 @@ char path_instruction_set[][128] = {
     {"./InstructionSet/flag_rom/BVC"},
     {"./InstructionSet/flag_rom/BVS"}
 };
+char path_instruction_set[][128] = {
+    {"./InstructionSet/x0_x1_x2/BRK"},
+    {"./InstructionSet/x0_x1_x2/ORA_IND_X"},
+    {"./InstructionSet/x0_x1_x2/ORA_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/AND_IND_X"},
+    {"./InstructionSet/x0_x1_x2/AND_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/EOR_IND_X"},
+    {"./InstructionSet/x0_x1_x2/EOR_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/ADC_IND_X"},
+    {"./InstructionSet/x0_x1_x2/ADC_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/STA_IND_X"},
+    {"./InstructionSet/x0_x1_x2/STA_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/LDA_IND_X"},
+    {"./InstructionSet/x0_x1_x2/LDA_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/CMP_IND_X"},
+    {"./InstructionSet/x0_x1_x2/CMP_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/SBC_IND_X"},
+    {"./InstructionSet/x0_x1_x2/SBC_Y_IND"},
+    {"./InstructionSet/x0_x1_x2/LDX_IMP"},
+    {"./InstructionSet/x0_x1_x2/LDY_IMP"},
+    {"./InstructionSet/x0_x1_x2/CPX_IMP"},
+    {"./InstructionSet/x0_x1_x2/CPY_IMP"},
+    {"./InstructionSet/x0_x1_x2/JSR"},
+    {"./InstructionSet/x0_x1_x2/RTS"},
+    {"./InstructionSet/x0_x1_x2/RTI"},
 
-const int INST_LIMIT = 163;
+    {"./InstructionSet/x4_x5_x6/ADC_ZPG"},
+    {"./InstructionSet/x4_x5_x6/ADC_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/AND_ZPG"},
+    {"./InstructionSet/x4_x5_x6/AND_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/ASL_ZPG"},
+    {"./InstructionSet/x4_x5_x6/ASL_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/BIT_ZPG"},
+    {"./InstructionSet/x4_x5_x6/CMP_ZPG"},
+    {"./InstructionSet/x4_x5_x6/CMP_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/CPX_ZPG"},
+    {"./InstructionSet/x4_x5_x6/CPY_ZPG"},
+    {"./InstructionSet/x4_x5_x6/DEC_ZPG"},
+    {"./InstructionSet/x4_x5_x6/DEC_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/EOR_ZPG"},
+    {"./InstructionSet/x4_x5_x6/EOR_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/INC_ZPG"},
+    {"./InstructionSet/x4_x5_x6/INC_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/LDA_ZPG"},
+    {"./InstructionSet/x4_x5_x6/LDA_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/LDX_ZPG"},
+    {"./InstructionSet/x4_x5_x6/LDX_ZPG_Y"},
+    {"./InstructionSet/x4_x5_x6/LDY_ZPG"},
+    {"./InstructionSet/x4_x5_x6/LDY_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/LSR_ZPG"},
+    {"./InstructionSet/x4_x5_x6/LSR_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/ORA_ZPG"},
+    {"./InstructionSet/x4_x5_x6/ORA_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/ROL_ZPG"},
+    {"./InstructionSet/x4_x5_x6/ROL_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/ROR_ZPG"},
+    {"./InstructionSet/x4_x5_x6/ROR_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/SBC_ZPG"},
+    {"./InstructionSet/x4_x5_x6/SBC_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/STA_ZPG"},
+    {"./InstructionSet/x4_x5_x6/STA_ZPG_X"},
+    {"./InstructionSet/x4_x5_x6/STX_ZPG"},
+    {"./InstructionSet/x4_x5_x6/STX_ZPG_Y"},
+    {"./InstructionSet/x4_x5_x6/STY_ZPG"},
+    {"./InstructionSet/x4_x5_x6/STY_ZPG_X"},
+
+    {"./InstructionSet/x8_x9_xA/ADC_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/ADC_IMP"},
+    {"./InstructionSet/x8_x9_xA/AND_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/AND_IMP"},
+    {"./InstructionSet/x8_x9_xA/ASL_A"},
+    {"./InstructionSet/x8_x9_xA/CLC"},
+    {"./InstructionSet/x8_x9_xA/CLD"},
+    {"./InstructionSet/x8_x9_xA/CLI"},
+    {"./InstructionSet/x8_x9_xA/CLV"},
+    {"./InstructionSet/x8_x9_xA/CMP_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/CMP_IMP"},
+    {"./InstructionSet/x8_x9_xA/DEX"},
+    {"./InstructionSet/x8_x9_xA/DEY"},
+    {"./InstructionSet/x8_x9_xA/EOR_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/EOR_IMP"},
+    {"./InstructionSet/x8_x9_xA/INX"},
+    {"./InstructionSet/x8_x9_xA/INY"},
+    {"./InstructionSet/x8_x9_xA/LDA_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/LDA_IMP"},
+    {"./InstructionSet/x8_x9_xA/LSR_A"},
+    {"./InstructionSet/x8_x9_xA/NOP"},
+    {"./InstructionSet/x8_x9_xA/ORA_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/ORA_IMP"},
+    {"./InstructionSet/x8_x9_xA/PHA"},
+    {"./InstructionSet/x8_x9_xA/PHP"},
+    {"./InstructionSet/x8_x9_xA/PLA"},
+    {"./InstructionSet/x8_x9_xA/PLP"},
+    {"./InstructionSet/x8_x9_xA/ROL_A"},
+    {"./InstructionSet/x8_x9_xA/ROR_A"},
+    {"./InstructionSet/x8_x9_xA/SBC_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/SBC_IMP"},
+    {"./InstructionSet/x8_x9_xA/SEC"},
+    {"./InstructionSet/x8_x9_xA/SED"},
+    {"./InstructionSet/x8_x9_xA/SEI"},
+    {"./InstructionSet/x8_x9_xA/STA_ABS_Y"},
+    {"./InstructionSet/x8_x9_xA/TAX"},
+    {"./InstructionSet/x8_x9_xA/TAY"},
+    {"./InstructionSet/x8_x9_xA/TSX"},
+    {"./InstructionSet/x8_x9_xA/TXA"},
+    {"./InstructionSet/x8_x9_xA/TXS"},
+    {"./InstructionSet/x8_x9_xA/TYA"},
+
+    {"./InstructionSet/xC_xD_xE/ADC_ABS"},
+    {"./InstructionSet/xC_xD_xE/ADC_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/AND_ABS"},
+    {"./InstructionSet/xC_xD_xE/AND_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/ASL_ABS"},
+    {"./InstructionSet/xC_xD_xE/ASL_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/BIT_ABS"},
+    {"./InstructionSet/xC_xD_xE/CMP_ABS"},
+    {"./InstructionSet/xC_xD_xE/CMP_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/CPX_ABS"},
+    {"./InstructionSet/xC_xD_xE/CPY_ABS"},
+    {"./InstructionSet/xC_xD_xE/DEC_ABS"},
+    {"./InstructionSet/xC_xD_xE/DEC_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/EOR_ABS"},
+    {"./InstructionSet/xC_xD_xE/EOR_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/INC_ABS"},
+    {"./InstructionSet/xC_xD_xE/INC_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/INTERRUPT"},
+    {"./InstructionSet/xC_xD_xE/JMP_ABS"},
+    {"./InstructionSet/xC_xD_xE/JMP_IND"},
+    {"./InstructionSet/xC_xD_xE/LDA_ABS"},
+    {"./InstructionSet/xC_xD_xE/LDA_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/LDX_ABS"},
+    {"./InstructionSet/xC_xD_xE/LDX_ABS_Y"},
+    {"./InstructionSet/xC_xD_xE/LDY_ABS"},
+    {"./InstructionSet/xC_xD_xE/LDY_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/LSR_ABS"},
+    {"./InstructionSet/xC_xD_xE/LSR_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/NMI"},
+    {"./InstructionSet/xC_xD_xE/ORA_ABS"},
+    {"./InstructionSet/xC_xD_xE/ORA_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/RESET"},
+    {"./InstructionSet/xC_xD_xE/ROL_ABS"},
+    {"./InstructionSet/xC_xD_xE/ROL_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/ROR_ABS"},
+    {"./InstructionSet/xC_xD_xE/ROR_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/SBC_ABS"},
+    {"./InstructionSet/xC_xD_xE/SBC_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/STA_ABS"},
+    {"./InstructionSet/xC_xD_xE/STA_ABS_X"},
+    {"./InstructionSet/xC_xD_xE/STX_ABS"},
+    {"./InstructionSet/xC_xD_xE/STY_ABS"},
+
+    {"./InstructionSet/conditional_branching/not_taken/BCC"},
+    {"./InstructionSet/conditional_branching/not_taken/BCS"},
+    {"./InstructionSet/conditional_branching/not_taken/BEQ"},
+    {"./InstructionSet/conditional_branching/not_taken/BMI"},
+    {"./InstructionSet/conditional_branching/not_taken/BNE"},
+    {"./InstructionSet/conditional_branching/not_taken/BPL"},
+    {"./InstructionSet/conditional_branching/not_taken/BVC"},
+    {"./InstructionSet/conditional_branching/not_taken/BVS"},
+
+    {"./InstructionSet/conditional_branching/taken/BCC"},
+    {"./InstructionSet/conditional_branching/taken/BCS"},
+    {"./InstructionSet/conditional_branching/taken/BEQ"},
+    {"./InstructionSet/conditional_branching/taken/BMI"},
+    {"./InstructionSet/conditional_branching/taken/BNE"},
+    {"./InstructionSet/conditional_branching/taken/BPL"},
+    {"./InstructionSet/conditional_branching/taken/BVC"},
+    {"./InstructionSet/conditional_branching/taken/BVS"},
+
+
+    {"./InstructionSet/flag_rom/BCC"},
+    {"./InstructionSet/flag_rom/BCS"},
+    {"./InstructionSet/flag_rom/BEQ"},
+    {"./InstructionSet/flag_rom/BMI"},
+    {"./InstructionSet/flag_rom/BNE"},
+    {"./InstructionSet/flag_rom/BPL"},
+    {"./InstructionSet/flag_rom/BVC"},
+    {"./InstructionSet/flag_rom/BVS"}
+};
+
+const int INST_LIMIT = 162;
 
 int main(){
     FILE * bin1;
