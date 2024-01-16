@@ -1,0 +1,6 @@
+INC_ZPG E6 5
+mic_count bypass pc_count bypass
+mic_count bypass pc_oe read_mode_and_dlatch_active
+mic_count bypass pc_oe latch_out_abl
+mic_count load_a_alu_inc_actived latch_out_abl read_mode
+mic_rese alu_out bypass write_mode
