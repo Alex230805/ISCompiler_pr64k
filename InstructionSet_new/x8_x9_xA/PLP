@@ -1,6 +1,5 @@
 PLP 28 4
-mic_count bypass pc_count bypass
-mic_count bypass sp_count isr_block
-mic_count bypass sp_oe read_mode_and_status_update
-mic_reset bypass pc_oe isr_block
-
+BYPASS BYPASS PC_COUNT BYPASS
+BYPASS BYPASS SP_INC BYPASS
+BYPASS BYPASS SP_OE CPU_DATA_IN_STATUS_WE
+MICR BYPASS PC_OE ISR_WE

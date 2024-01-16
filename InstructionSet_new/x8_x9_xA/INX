@@ -1,5 +1,3 @@
-INX E8 3
-mic_count bypass pc_count bypass
-mic_count_and_oe_x load_a_alu_inc_actived pc_oe isr_block
-mic_reset_and_we_x alu_out pc_oe bypass
-
+INX E8 2
+OE_X A_WE_INC PC_COUNT BYPASS
+MICR_WE_X BUS_OE PC_OE ISR_WE

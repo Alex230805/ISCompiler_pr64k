@@ -1,4 +1,3 @@
 NOP EA 2
-mic_count bypass pc_count isr_block
-mic_reset bypass pc_oe terminate_process
-
+BYPASS BYPASS PC_COUNT BYPASS
+MICR BYPASS PC_OE ISR_WE
