@@ -1,7 +1,6 @@
 JMP_ABS 4C 5
-mic_count bypass pc_count isr_block
-mic_count bypass pc_count read_mode_and_pcl_load
-mic_count bypass pc_oe read_mode_and_pch_load
-mic_count bypass pc_load_reg isr_block
-mic_reset bypass pc_oe terminate_process
-
+BYPASS BYPASS PC_COUNT BYPASS
+BYPASS BYPASS PC_COUNT_PCL_LOAD CPU_DATA_IN
+BYPASS BYPASS PC_OE_PCH_LOAD CPU_DATA_IN
+BYPASS BYPASS PCL_PCH_LOAD BYPASS
+MICR BYPASS PC_OE ISR_WE
