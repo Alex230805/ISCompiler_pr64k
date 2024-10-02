@@ -1,8 +1,0 @@
-DEC_ZPG_X D6 6
-mic_count bypass pc_count bypass
-mic_count bypass pc_count_alu_load read_mode_and_dlatch_active
-mic_count_and_oe_x load_a_alu_sum_actived pc_oe isr_block
-mic_count bypass alu_out_abl isr_block
-mic_count load_a_alu_dec_actived all_latch_out_ab read_mode
-mic_reset alu_out bypass write_mode
-
